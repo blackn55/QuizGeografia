@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Geografia do Brasil</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('Fotos/Mapa\ de\ fundo.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #005555, #228B22);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    font-size: 32px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h2, h3 {
+    color: #005555;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 18px;
+    color: #228B22;
+}
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🌍 Quiz de Geografia do Brasil 🌴</h1>
+        <p>Teste seus conhecimentos sobre o nosso país!</p>
+    </header>
+
+    <div class="container">
+        <!-- Entrada de Nome -->
+        <div id="name-section">
+            <label for="player-name">Digite seu nome:</label>
+            <input type="text" id="player-name" placeholder="Seu nome">
+            <button onclick="startQuiz()">Começar Quiz</button>
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz" style="display: none;">
+            <div id="question-container"></div>
+            <button id="next-btn" onclick="nextQuestion()">Próxima Pergunta</button>
+            <p id="score">Pontuação: 0</p>
+        </div>
+
+        <!-- Resultado e Histórico -->
+        <div id="result" style="display: none;">
+            <h2>Resultado</h2>
+            <p id="final-score"></p>
+            <h3>🏆 Histórico de Pontuações</h3>
+            <ul id="history"></ul>
+            <button onclick="resetQuiz()">Jogar Novamente</button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p style="color: gray;">Feito com 💚 por xAI | Explore o Brasil!</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
